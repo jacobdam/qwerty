@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922185424) do
+ActiveRecord::Schema.define(:version => 20120402105345) do
 
   create_table "documents", :force => true do |t|
     t.string   "permalink"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(:version => 20110922185424) do
     t.string   "meta_keywords"
     t.string   "image_alt"
     t.string   "template"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "node_settings", :force => true do |t|

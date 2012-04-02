@@ -10,41 +10,41 @@
     <style type="text/css">
       body {
         padding-top: 60px;
-      </style>
-    </head>
-    <body>
-      <div class="topbar">
-        <div class="topbar-inner">
-          <div class="container-fluid">
-            <a class="brand" href="#">Qwerty</a>
-            <ul class="nav">
-              <li class="active"><a href="<%= qwerty_admin_root_path %>">Dashboard</a></li>
-              <li><a href="<%= qwerty_admin_documents_path %>">Content</a></li>
-              <li><a href="<%= qwerty_admin_nodes_path %>">Sitemap</a></li>
-              <li><a href="/">Homepage</a></li>
-            </ul>
-            <p class="pull-right"></p>
-          </div>
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Qwerty</a>
+          <ul class="nav">
+            <li class="active"><%= link_to 'Dashboard', qwerty_admin_root_path %></li>
+            <li><%= link_to 'Content', qwerty_admin_documents_path %></li>
+            <li><%= link_to 'Sitemap', qwerty_admin_nodes_path %></li>
+            <li><%= link_to 'Menu', qwerty_admin_menus_path %></li>
+            <li><%= link_to 'Homepage', root_path %></li>
+          </ul>
+          <p class="pull-right"></p>
         </div>
       </div>
-
-      <div class="content">
-        <div class='row'>
-          <div class='span15 offset1'>
-            <% flash.each do | key, value | %>
-              <div class="alert-message fade in <%= key %>" data-alert='alert'>
-                <a class="close" href="#">×</a>
-                <p><%= value %></p>
-              </div>
-            <% end %>
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-      <footer>
-      <p>Powered by <%= link_to 'Qwerty', 'https://github.com/krisleech/qwerty'%> <%= Qwerty::VERSION %></p>
-      </footer>
     </div>
-  </div>
-</body>
+
+    <div class="content">
+      <div class='row'>
+        <div class='span15 offset1'>
+          <% flash.each do | key, value | %>
+            <div class="alert-message fade in <%= key %>" data-alert='alert'>
+              <a class="close" href="#">×</a>
+              <p><%= value %></p>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Powered by <%= link_to 'Qwerty', 'https://github.com/krisleech/qwerty'%> <%= Qwerty::VERSION %></p>
+    </footer>
+  </body>
 </html>

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         get :down
       end
     end
+    
+    resources :menus, :except => [:show]
   end
 
 

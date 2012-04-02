@@ -1,0 +1,12 @@
+<%= form.error_notification %>
+
+<div class='inputs'>
+  <fieldset>
+    <%= form.input :name %>
+  </fieldset>
+</div>
+
+<div class='actions'>
+  <%= form.button :submit, "Save Menu", :disable_with => 'Please wait...', :class => 'btn primary' %>
+  <%= link_to 'Back', [:qwerty_admin, :menus], :class => 'btn' %>
+</div>

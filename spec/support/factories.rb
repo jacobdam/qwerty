@@ -18,4 +18,8 @@ FactoryGirl.define do
     value_klass 'String'
     value 'Some Setting Value'
   end
+  
+  factory :menu do
+    sequence(:name) { |n| "node_setting_key_#{n}" }
+  end
 end

@@ -1,0 +1,23 @@
+<h2>Menu</h2>
+
+
+<div id="menus">
+  <% if @menus.present? %>
+    <table>
+      <% @menus.each do |menu| %>
+        <tr>
+          <td><%= link_to menu.name, edit_qwerty_admin_menu_path(menu) %></td>
+          <td>
+            <%= link_to 'Edit', edit_qwerty_admin_menu_path(menu), :class => 'btn small' %>
+            <%= link_to 'Delete', qwerty_admin_menu_path(menu), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn small' %>
+          </td>
+        </li>
+      <% end %>
+    </table>
+  <% else %>
+    <p>No menus have been added yet.</p>
+  <% end %>
+  <div>
+    <%= link_to "Add Menu", new_qwerty_admin_menu_path, :class => 'btn primary' %>
+  </div>
+</div>
